@@ -3,7 +3,7 @@
 {% set wheel_tag = "py2.py3-none-any" %}
 {% set fn = "{}-{}-{}.whl".format(name, version, wheel_tag) %}
 {% set sha256 = "9aa98bfbde91e331c3e9eb7207a21219b7e96f95541a3758d1c9f7d95a25ba5e" %}
-{% set build = 1000 %}
+{% set build = 1001 %}
 
 package:
   name: {{ name }}
@@ -22,7 +22,7 @@ build:
     - flit-install-py2 = flit_install_py2:main
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -38,6 +38,7 @@ test:
 about:
   home: https://github.com/takluyver/flit_install_py2
   license: MIT
+  license_file: LICENSE
   summary: Shim to install packages using flit metadata on Python 2
 
 extra:
